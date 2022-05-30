@@ -21,7 +21,6 @@ class LoadResult constructor(private var musicManager: GuildMusicManager) : Audi
                 musicManager.trackScheduler.queue(tracks[0])
             }
         }
-
     }
 
     override fun noMatches() {

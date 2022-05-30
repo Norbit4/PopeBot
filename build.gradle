@@ -26,3 +26,9 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+jar {
+    manifest {
+        attributes "Main-Class": "pl.norbit.popebot.MainBot"
+    }
+}
