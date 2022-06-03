@@ -1,4 +1,4 @@
-package pl.norbit.popebot
+package pl.norbit.popebot.music
 
 import com.sedmelluq.discord.lavaplayer.player.AudioLoadResultHandler
 import com.sedmelluq.discord.lavaplayer.tools.FriendlyException

@@ -1,4 +1,4 @@
-package pl.norbit.popebot
+package pl.norbit.popebot.music
 
 import com.sedmelluq.discord.lavaplayer.player.AudioPlayer
 import com.sedmelluq.discord.lavaplayer.player.event.AudioEventAdapter

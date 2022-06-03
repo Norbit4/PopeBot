@@ -1,4 +1,4 @@
-package pl.norbit.popebot
+package pl.norbit.popebot.music
 
 import com.sedmelluq.discord.lavaplayer.player.AudioPlayerManager
 import com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager
@@ -20,7 +20,7 @@ class PlayerManager {
         AudioSourceManagers.registerLocalSource(audioPlayerManager)
     }
 
-    private fun getMusicManager(guild: Guild): GuildMusicManager{
+    private fun getMusicManager(guild: Guild): GuildMusicManager {
         if (!musicManagers.containsKey(guild.idLong)) {
             val guildMusicManager = GuildMusicManager(audioPlayerManager)
             guild.audioManager.sendingHandler = guildMusicManager.sendHandler

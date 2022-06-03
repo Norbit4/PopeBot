@@ -1,9 +1,9 @@
 package pl.norbit.popebot;
 
-public class MainBot {
+public class MainPopeBot {
 
     public static void main(String[] args) {
 
-        PopeBotMainKt.start();
+        TaskManager.run();
     }
 }
