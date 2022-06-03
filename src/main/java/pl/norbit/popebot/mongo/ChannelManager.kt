@@ -1,5 +1,6 @@
 package pl.norbit.popebot.mongo
 
+import com.mongodb.BasicDBObject
 import org.bson.Document
 
 class ChannelManager constructor(private val database: MongoDB) {
@@ -9,15 +10,16 @@ class ChannelManager constructor(private val database: MongoDB) {
         val listDocs = ArrayList<Document>()
         val listChannels = ArrayList<ChannelRecord>()
 
-        if(listDocs.isNotEmpty()) {
-            channels.forEach(listDocs::add)
+        channels.forEach(listDocs::add)
 
-            for (listDoc in listDocs) {
+        for (listDoc in listDocs) {
+            val channelID = listDoc.getString("CHANNEL_ID")
+            val serverID = listDoc.getString("SERVER_ID")
 
-                listChannels.add(ChannelRecord(listDoc.getString("CHANNEL_ID"), listDoc.getString("SERVER_ID")))
+            if(channelID != null && serverID != null) {
+                listChannels.add(ChannelRecord(channelID, serverID))
             }
         }
-
         return listChannels
     }
 
@@ -31,5 +33,19 @@ class ChannelManager constructor(private val database: MongoDB) {
 
     fun closeDBConnection(){
         database.close()
+    }
+
+    fun getChannelID(id: String): String? {
+
+        val dbObject = BasicDBObject()
+        dbObject.append("SERVER_ID", id)
+
+        val channel = database.getChannel(dbObject)
+
+        if(channel != null){
+
+            return channel.getString("CHANNEL_ID")
+        }
+        return null;
     }
 }

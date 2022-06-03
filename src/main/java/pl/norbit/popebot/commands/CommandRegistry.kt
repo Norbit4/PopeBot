@@ -18,7 +18,7 @@ class CommandRegistry {
 
 
             bot.upsertCommand("channel","add channel to join list")
-                .addOption(OptionType.STRING,"channelid","channelid;", true)
+                .addOption(OptionType.STRING,"channelid","ch", true)
                 .setDefaultEnabled(false)
                 .queue()
 
@@ -28,6 +28,14 @@ class CommandRegistry {
                 ?.queue()
 
             bot.upsertCommand("clear","remove channel from join list")
+                .queue()
+
+            //join cmd
+            guildById?.upsertCommand("join", "join the bot to the set channel")
+                ?.setDefaultEnabled(false)
+                ?.queue()
+
+            bot.upsertCommand("join","join the bot to the set channel")
                 .queue()
 
             bot.updateCommands().queue()

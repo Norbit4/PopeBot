@@ -45,7 +45,7 @@ class MongoDB {
         }
     }
 
-    private fun getChannel(obj: BasicDBObject): Document?{
+    fun getChannel(obj: BasicDBObject): Document?{
 
         return collection.find(obj).first()
     }
