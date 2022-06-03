@@ -6,3 +6,6 @@ This bot joins the specified voice channel at 21:37 every day and plays "Barka" 
 📚Lib used:
 - https://github.com/DV8FromTheWorld/JDA
 - https://github.com/sedmelluq/lavaplayer
+
+📁Database:
+- MongoDB
