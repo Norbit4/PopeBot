@@ -7,7 +7,7 @@ import com.mongodb.client.MongoClient
 import com.mongodb.client.MongoClients
 import com.mongodb.client.MongoCollection
 import org.bson.Document
-import pl.norbit.popebot.Settings
+import pl.norbit.popebot.config.Settings
 
 class MongoDB {
     private val mongoClient: MongoClient

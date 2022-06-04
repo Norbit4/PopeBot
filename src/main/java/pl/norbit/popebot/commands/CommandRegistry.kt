@@ -19,7 +19,6 @@ class CommandRegistry {
 
             bot.upsertCommand("channel","add channel to join list")
                 .addOption(OptionType.STRING,"channelid","ch", true)
-                .setDefaultEnabled(false)
                 .queue()
 
             //clear cmd

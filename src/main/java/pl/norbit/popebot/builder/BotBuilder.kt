@@ -3,7 +3,7 @@ package pl.norbit.popebot.builder
 import net.dv8tion.jda.api.JDABuilder
 import net.dv8tion.jda.api.OnlineStatus
 import net.dv8tion.jda.api.entities.Activity
-import pl.norbit.popebot.Settings
+import pl.norbit.popebot.config.Settings
 import pl.norbit.popebot.commands.Clear
 import pl.norbit.popebot.commands.Join
 import pl.norbit.popebot.commands.SetChannel

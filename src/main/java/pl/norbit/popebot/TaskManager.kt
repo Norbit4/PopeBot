@@ -2,6 +2,7 @@ package pl.norbit.popebot
 
 import pl.norbit.popebot.builder.BotBuilder
 import pl.norbit.popebot.commands.CommandRegistry
+import pl.norbit.popebot.config.Settings
 import pl.norbit.popebot.mongo.ChannelManager
 import pl.norbit.popebot.mongo.MongoDB
 import pl.norbit.popebot.music.PlayerManager
@@ -22,15 +23,11 @@ class TaskManager {
 
         @JvmStatic
         fun run() {
-
             CommandRegistry.register(bot)
-
-            bot.updateCommands().queue()
 
             waitingTask()
             cmdTask()
             println("$prefix HI! :)")
-
         }
 
         private fun waitingTask() {
@@ -108,10 +105,7 @@ class TaskManager {
                         "stop", "end" -> {
                             println("$prefix bye! :c")
 
-                            bot.shutdownNow()
-                            channelManager.closeDBConnection()
-                            executorService.shutdownNow()
-                            exitProcess(0)
+                            closeAll()
                         }
                         "info" -> {
                             val message: String =
@@ -151,6 +145,20 @@ class TaskManager {
                     }
                 }
             }
+        }
+
+        @JvmStatic
+        fun closeAll(){
+            bot.shutdownNow()
+            channelManager.closeDBConnection()
+            executorService.shutdownNow()
+            exitProcess(0)
+        }
+
+        fun close(){
+            bot.shutdownNow()
+            channelManager.closeDBConnection()
+            executorService.shutdownNow()
         }
     }
 }
