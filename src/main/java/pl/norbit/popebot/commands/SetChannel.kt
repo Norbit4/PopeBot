@@ -3,8 +3,9 @@ package pl.norbit.popebot.commands
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent
 import net.dv8tion.jda.api.hooks.ListenerAdapter
 import pl.norbit.popebot.MainPopeBot
-import pl.norbit.popebot.TaskManager
+import pl.norbit.popebot.builder.EmbedBuilder
 import pl.norbit.popebot.mongo.ChannelRecord
+import java.awt.Color
 
 class SetChannel : ListenerAdapter() {
 
@@ -23,15 +24,24 @@ class SetChannel : ListenerAdapter() {
                         val guild = event.guild
 
                         if (guild != null) {
-                            TaskManager.channelManager.addChannel(ChannelRecord(channelID, guild.id))
+                            MainPopeBot.getTaskManager().channelManager.addChannel(ChannelRecord(channelID, guild.id))
                         }
 
-                        event.reply("Channel added!").queue()
+                        val embedBuilder = EmbedBuilder.getBuilder("Channel added")
+                        embedBuilder.setColor(Color.GREEN)
+
+                        event.reply("").addEmbeds(embedBuilder.build()).queue()
                     }else{
-                        event.reply("Channel with this id does not exist!").queue()
+                        val embedBuilder = EmbedBuilder.getBuilder("Channel with this id does not exist!")
+                        embedBuilder.setColor(Color.RED)
+
+                        event.reply("").addEmbeds(embedBuilder.build()).queue()
                     }
                 }else{
-                    event.reply("Invalid format! Id must be numeric!").queue()
+                    val embedBuilder = EmbedBuilder.getBuilder("Invalid format! Id must be numeric!")
+                    embedBuilder.setColor(Color.RED)
+
+                    event.reply("").addEmbeds(embedBuilder.build()).queue()
                 }
             }
         }

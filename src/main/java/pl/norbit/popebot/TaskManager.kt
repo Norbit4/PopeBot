@@ -13,15 +13,13 @@ import java.util.concurrent.Executors
 import kotlin.system.exitProcess
 
 class TaskManager {
-
-    companion object {
         val channelManager: ChannelManager = ChannelManager(MongoDB())
         private val executorService: ExecutorService = Executors.newCachedThreadPool()
         private val botBuilder = BotBuilder.getBuilder(Settings.TOKEN)
         private var bot = botBuilder.build()
-        private const val prefix: String = "[PopeBot]"
+        private val prefix: String = "[PopeBot]"
 
-        @JvmStatic
+
         fun run() {
             CommandRegistry.register(bot)
 
@@ -48,8 +46,8 @@ class TaskManager {
             }
         }
 
-        @JvmStatic
-        fun playMusicAll() {
+
+        private fun playMusicAll() {
 
             println(">>>[21:37]<<<")
             println("")
@@ -80,6 +78,7 @@ class TaskManager {
                 }
             }
         }
+
         fun playMusic(channelID: String){
             executorService.submit {
                 val voiceChannel = bot.awaitReady().getVoiceChannelById(channelID)
@@ -147,18 +146,10 @@ class TaskManager {
             }
         }
 
-        @JvmStatic
-        fun closeAll(){
+        private fun closeAll(){
             bot.shutdownNow()
             channelManager.closeDBConnection()
             executorService.shutdownNow()
             exitProcess(0)
         }
-
-        fun close(){
-            bot.shutdownNow()
-            channelManager.closeDBConnection()
-            executorService.shutdownNow()
-        }
-    }
 }
