@@ -16,6 +16,7 @@ Commands:
 📚Lib used:
 - https://github.com/DV8FromTheWorld/JDA
 - https://github.com/sedmelluq/lavaplayer
+- https://github.com/google/gson
 
 📁Database:
 - MongoDB
