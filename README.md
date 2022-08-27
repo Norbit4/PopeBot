@@ -3,7 +3,7 @@
  
 👩‍🏫 *The bot was created to learn the Kotlin language.*
 
-[~~Add bot to the server~~](https://discord.com/api/oauth2/authorize?client_id=980586508559990804&permissions=8&scope=applications.commands%20bot "Click")
+[~~Add bot to the server~~](https://discord.com/api/oauth2/authorize?client_id=980586508559990804&permissions=8&scope=applications.commands%20bot "Click")  ***(inactive)***
 
 
  - - - -
