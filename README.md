@@ -6,13 +6,13 @@
 [~~Add bot to the server~~](https://discord.com/api/oauth2/authorize?client_id=980586508559990804&permissions=8&scope=applications.commands%20bot "Click")  ***(inactive)***
 
 
- - - - -
+#
 Commands:
 - **/channel <id>** - add channel to join list
 - **/clear** - remove channel from join list 
 - **/join** - join the bot to the set channel
 
- - - - -
+#
 <h6 align="Left">Used Languages and Tools:</h6>
 
 <a href="https://kotlinlang.org" target="_blank" rel="noreferrer"> 
