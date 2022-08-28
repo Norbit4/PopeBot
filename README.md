@@ -13,10 +13,21 @@ Commands:
 - **/join** - join the bot to the set channel
 
  - - - -
-📚Lib used:
-- https://github.com/DV8FromTheWorld/JDA
-- https://github.com/sedmelluq/lavaplayer
-- https://github.com/google/gson
+<h6 align="Left">Used Languages and Tools:</h6>
 
-📁Database:
-- MongoDB
+<a href="https://kotlinlang.org" target="_blank" rel="noreferrer"> 
+<img src="https://www.vectorlogo.zone/logos/kotlinlang/kotlinlang-icon.svg" alt="kotlin" width="30" height="30"/> 
+</a> 
+
+<a href="https://github.com/DV8FromTheWorld/JDA" target="_blank" rel="noreferrer"> 
+<img src="https://github.com/DV8FromTheWorld/JDA/blob/assets/assets/readme/logo.png?raw=true" alt="jda" width="30" height="30"/> 
+</a> 
+
+<a href="https://github.com/sedmelluq/lavaplayer" target="_blank" rel="noreferrer"> 
+<img src="https://repository-images.githubusercontent.com/396661481/440685a1-20f4-4676-9d08-51cb92f71d55" alt="lavaplayer" width="30" height="30"/> 
+</a> 
+
+<a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"> 
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="30" height="30"/> 
+</a> 
+
