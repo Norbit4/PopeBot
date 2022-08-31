@@ -8,9 +8,9 @@
 
 #
 Commands:
-- **/channel <id>** - add channel to join list
+- **/channel [id]** - add channel to join list
 - **/clear** - remove channel from join list 
-- **/join** - join the bot to the set channel
+- **/join** - join the bot to the set up channel
 
 #
 <h6 align="Left">Used Languages and Tools:</h6>
